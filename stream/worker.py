@@ -74,7 +74,7 @@ def stream_worker(hass, stream, quit_event):
                 if first_packet:
                     continue
                 # If we get a "flushing" packet, the stream is done
-                raise StopIteration("No dts in packet")
+                # raise StopIteration("No dts in packet")
         except (av.AVError, StopIteration) as ex:
             # End of stream, clear listeners and stop thread
             for fmt, _ in outputs.items():
