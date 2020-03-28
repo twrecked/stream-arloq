@@ -46,6 +46,7 @@ def create_stream_buffer(stream_output, video_stream, audio_frame):
 def stream_worker(hass, stream, quit_event):
     """Handle consuming streams."""
 
+    _LOGGER.info("Arlo Q Stream starting")
     container = av.open(stream.source, options=stream.options)
     try:
         video_stream = container.streams.video[0]
